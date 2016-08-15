@@ -1,0 +1,96 @@
+"zombiesurvival"
+{
+	"base"				"base"
+	"title"				"Zombie Survival"
+	"maps"				"^zs_|^zm_|^zh_|^zps_|^zr_"
+	"menusystem"		"1"
+	"workshopid"		"105462463"
+
+	"author_name"		"William 'JetBoom' Moodhe"
+	"author_email"		"williammoodhe@gmail.com"
+	"author_url"		"http://www.noxiousnet.com/"
+
+	"settings"
+	{
+		1
+		{
+			"name"		"zs_roundlimit"
+			"text"		"zs_roundlimit"
+			"help"		"Change the map after a round if this many rounds have passed on the map. 0 to disable or -1 to never change"
+			"type"		"Numeric"
+			"default"	"2"
+		}
+
+		2
+		{
+			"name"		"zs_timelimit"
+			"text"		"zs_timelimit"
+			"help"		"Change the map after a round if this many minutes have passed on the map. 0 to disable or -1 to never change"
+			"type"		"Numeric"
+			"default"	"20"
+		}
+
+		3
+		{
+			"name"		"zs_numberofwaves"
+			"text"		"zs_numberofwaves"
+			"help"		"Number of waves players must survive to win"
+			"type"		"Numeric"
+			"default"	"10"
+		}
+
+		4
+		{
+			"name"		"zs_startingworth"
+			"text"		"zs_startingworth"
+			"help"		"The amount of Worth humans spawn with. Set to 0 to disable Worth"
+			"type"		"Numeric"
+			"default"	"100"
+		}
+
+		5
+		{
+			"name"		"zs_redeem"
+			"text"		"zs_redeem"
+			"help"		"Killing this many humans as a zombie will respawn you as a human. 0 to disable"
+			"type"		"Numeric"
+			"default"	"4"
+		}
+
+		6
+		{
+			"name"		"zs_bosszombies"
+			"text"		"zs_bosszombies"
+			"help"		"Summon a boss zombie in the middle of each wave break"
+			"type"		"CheckBox"
+			"default"	"1"
+		}
+
+		7
+		{
+			"name"		"zs_bosszombiethreshold"
+			"text"		"zs_bosszombiethreshold"
+			"help"		"Don't summon boss zombies if less than this amount of players. 0 to disable"
+			"type"		"Numeric"
+			"default"	"10"
+		}
+
+		8
+		{
+			"name"		"zs_pantsmode"
+			"text"		"zs_pantsmode"
+			"help"		"Only the dead can know peace from this evil."
+			"type"		"CheckBox"
+			"default"	"0"
+		}
+
+		9
+		{
+			"name"		"zs_grief_strict"
+			"text"		"zs_grief_strict"
+			"help"		"Give points and eventually health penalties to humans who destroy friendly barricades"
+			"type"		"CheckBox"
+			"default"	"1"
+		}
+	}
+}

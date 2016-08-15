@@ -1,0 +1,16 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\weapons/v_hands"
+
+	"$halflambert" 1
+	"$nodecal" "1"
+	"$model" "1"
+
+	"$phong" "1"
+	"$phongboost" ".3"
+	"$phongexponenttexture" "models\weapons\v_hands_exp"
+	"$phongfresnelranges"	"[.1 .3 .5]"
+}
+
+
+
