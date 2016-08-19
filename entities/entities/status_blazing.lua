@@ -106,5 +106,5 @@ if CLIENT then
 		particle:SetAirResistance(12)
 	end
 else
-	if !self:GetOwner() or !self:GetOwner():IsValid() or !self:GetOwner():Alive() then self:Remove() end
+	if self:GetOwner() or self:GetOwner():IsValid() or self:GetOwner():Alive() then self:Remove() end
 end
