@@ -221,8 +221,8 @@ function GM:Move(pl, move)
 				move:SetMaxClientSpeed(75)
 			end
 		elseif move:GetForwardSpeed() < 0 then
-			move:SetMaxSpeed(move:GetMaxSpeed() * 0.45)
-			move:SetMaxClientSpeed(move:GetMaxClientSpeed() * 0.45)
+			move:SetMaxSpeed(move:GetMaxSpeed() * 0.6)
+			move:SetMaxClientSpeed(move:GetMaxClientSpeed() * 0.6)
 		end
 	elseif pl:CallZombieFunction("Move", move) then
 		return
@@ -230,7 +230,7 @@ function GM:Move(pl, move)
 
 	local legdamage = pl:GetLegDamage()
 	if legdamage > 0 then
-		local scale = 1 - math.min(1, legdamage * 0.33)
+		local scale = 1 - math.min(1, legdamage * 0.5)
 		move:SetMaxSpeed(move:GetMaxSpeed() * scale)
 		move:SetMaxClientSpeed(move:GetMaxClientSpeed() * scale)
 	end
@@ -248,7 +248,7 @@ function GM:OnPlayerHitGround(pl, inwater, hitfloater, speed)
 	end
 
 	if pl:Team() ~= TEAM_UNDEAD or not pl:GetZombieClassTable().NoFallSlowdown then
-		pl:RawCapLegDamage(CurTime() + math.min(2, speed * 0))
+		pl:RawCapLegDamage(CurTime() + math.min(2, speed * 0.0035))
 	end
 
 	if SERVER then

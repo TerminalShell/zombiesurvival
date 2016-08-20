@@ -470,7 +470,7 @@ function GM:HumanHUD(screenscale)
 			local desiredzombies = self:GetDesiredStartingZombies()
 
 			draw.SimpleText("The humans closest to zombie spawns will start as zombies.", "ZSHUDFontSmall", w * 0.5, h * 0.7 + txth, COLOR_WHITE, TEXT_ALIGN_CENTER)
-			
+
 			draw.SimpleText("Number of initial zombies this game (".. self.WaveOneZombies * 100 .."%): "..desiredzombies, "ZSHUDFontSmall", w * 0.5, h * 0.7 + txth * 2, COLOR_WHITE, TEXT_ALIGN_CENTER)
 
 			surface.SetFont("ZSHUDFontTiny")
@@ -548,7 +548,7 @@ function GM:_HUDPaint()
 	if GetGlobalBool("classicmode") then
 		draw.SimpleText("CLASSIC MODE", "ZSHUDFontSmaller", 4, ScrH() - 4, COLOR_GRAY, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP)
 	end
-	
+
 end
 
 function GM:ZombieObserverHUD(MySelf, screenscale, obsmode)
@@ -1062,14 +1062,14 @@ function GM:PostDrawViewModel(vm, pl, wep)
 --	if wep and wep.PostDrawViewModel then
 --		wep:PostDrawViewModel(vm)
 --	end
-	
+
 		if ( wep.UseHands || !wep:IsScripted() ) then
 
 		local hands = LocalPlayer():GetHands()
 		if ( IsValid( hands ) ) then hands:DrawModel() end
 
 	end
-	
+
 end
 
 local undomodelblend = false
@@ -1174,7 +1174,7 @@ local function EndRoundCalcView(pl, origin, angles, fov, znear, zfar)
 	if GAMEMODE.EndTime and CurTime() < GAMEMODE.EndTime + 5 then
 		if GAMEMODE.LastHumanPosition then
 			local delta = math.Clamp((CurTime() - GAMEMODE.EndTime) * 2, 0, 1)
- 
+
 			local start = GAMEMODE.LastHumanPosition * delta + origin * (1 - delta)
 			local tr = util.TraceHull({start = start, endpos = delta * 64 * Angle(0, CurTime() * 30, 0):Forward(), mins = Vector(-2, -2, -2), maxs = Vector(2, 2, 2), filter = player.GetAll(), mask = MASK_SOLID})
 			return {origin = tr.HitPos + tr.HitNormal, angles = (start - tr.HitPos):Angle()}
@@ -1201,7 +1201,7 @@ function GM:EndRound(winner, nextmap)
 
 	ROUNDWINNER = winner
 	NEXTMAP = nextmap
-	
+
 	self.EndTime = CurTime()
 
 	RunConsoleCommand("stopsound")
@@ -1380,7 +1380,7 @@ usermessage.Hook("recwavestart", function(um)
 	  if wave == 10 and not LASTHUMAN then
 		GAMEMODE:SplitMessage("THE FINAL WAVE HAS BEGUN! SURVIVE TWO MORE MINUTES!", "<font=ZSHUDFontSmall><color=white>ALL classes unlocked and the chance for redemption has ended!")
 		surface.PlaySound("slamstand.mp3")
-	  
+
 	  elseif wave == 10 and LASTHUMAN then
 		GAMEMODE:SplitMessage("HANG IN THERE SURVIVOR! ONLY TWO MORE MINUTES!", "<font=ZSHUDFontSmall><color=white>ALL classes unlocked and the chance for redemption has ended!")
 
