@@ -106,6 +106,7 @@ if CLIENT then
 		particle:SetAirResistance(12)
 	end
 else
-	local owner = self:GetOwner()
-	if owner or owner:IsValid() or owner:Alive() then self:Remove() end
+	function ENT:Initialize()
+		if self:GetOwner() or self:GetOwner():IsValid() or self:GetOwner():Alive() then self:Remove() end
+	end
 end
