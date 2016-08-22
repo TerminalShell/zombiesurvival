@@ -221,8 +221,8 @@ function GM:Move(pl, move)
 				move:SetMaxClientSpeed(75)
 			end
 		elseif move:GetForwardSpeed() < 0 then
-			move:SetMaxSpeed(move:GetMaxSpeed() * 0.6)
-			move:SetMaxClientSpeed(move:GetMaxClientSpeed() * 0.6)
+			move:SetMaxSpeed(move:GetMaxSpeed() * 0.65)
+			move:SetMaxClientSpeed(move:GetMaxClientSpeed() * 0.65)
 		end
 	elseif pl:CallZombieFunction("Move", move) then
 		return
