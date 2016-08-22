@@ -35,8 +35,6 @@ include("obj_entity_extend.lua")
 include("obj_player_extend.lua")
 include("obj_weapon_extend.lua")
 
-include("cl_fix_emitters.lua")
-
 GM.EndRound = false
 
 team.SetUp(TEAM_ZOMBIE, "The Undead", Color(0, 255, 0, 255))
