@@ -19,7 +19,7 @@ CLASS.CanTaunt = true
 CLASS.CanFeignDeath = true
 
 CLASS.Health = 200
-CLASS.Speed = 180
+CLASS.Speed = 200
 CLASS.Points = 5
 
 CLASS.SWEP = "weapon_zs_zombie"
