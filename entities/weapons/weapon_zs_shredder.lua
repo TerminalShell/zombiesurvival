@@ -2,10 +2,11 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Shredder' SMG"
+	SWEP.Description = "An SMG with a high rate of fire and plenty of bullets to shoot. Great for mid range"
 	SWEP.Slot = 2
 	SWEP.SlotPos = 0
 	SWEP.ViewModelFlip = false
-	
+
 	SWEP.HUD3DBone = "v_weapon.MP5_Parent"
 	SWEP.HUD3DPos = Vector(-1.2, -5.5, -6)
 	SWEP.HUD3DAng = Angle(0, 0, 0)

@@ -2,7 +2,7 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "Razor Blade"
-	SWEP.Description = "A Unique Weapon That Slices The Undead"
+	SWEP.Description = "A Unique Weapon That Slices The Undead Apart"
 
 SWEP.VElements = {
 	["saw"] = { type = "Model", model = "models/props_junk/sawblade001a.mdl", bone = "v_weapon.knife_Parent", rel = "", pos = Vector(-0.456, -6.818, 2.273), angle = Angle(103.294, 9.204, -5.114), size = Vector(0.263, 0.263, 0.263), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
