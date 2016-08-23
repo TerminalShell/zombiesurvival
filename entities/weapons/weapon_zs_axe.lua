@@ -2,6 +2,7 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "Axe"
+	SWEP.Description = "Chop through wood or limbs as needed"
 
 	SWEP.ViewModelFOV = 55
 	SWEP.ViewModelFlip = false

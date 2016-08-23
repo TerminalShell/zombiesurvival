@@ -2,10 +2,11 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Crossfire' Glock 3"
+	SWEP.Description = "High damage pistol that shoots 3 bullets at once. Effective at close range"
 	SWEP.Slot = 1
 	SWEP.SlotPos = 0
 	SWEP.ViewModelFlip = false
-	
+
 	SWEP.HUD3DBone = "v_weapon.Glock_Slide"
 	SWEP.HUD3DPos = Vector(0.5, 0, -1)
 	SWEP.HUD3DAng = Angle(100, -380, 0)

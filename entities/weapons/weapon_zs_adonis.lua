@@ -2,11 +2,12 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Adonis' Pulse Rifle"
+	SWEP.Description = "Fully Automatic Pulse Rifle with high damage but a slower fire rate"
 	SWEP.Slot = 2
 	SWEP.SlotPos = 0
 
 	SWEP.HUD3DBone = "Vent"
-	SWEP.HUD3DPos = Vector(1, 0, 0)	
+	SWEP.HUD3DPos = Vector(1, 0, 0)
 	SWEP.HUD3DScale = 0.018
 
 	SWEP.ViewModelFlip = false

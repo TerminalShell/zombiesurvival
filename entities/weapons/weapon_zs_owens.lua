@@ -2,9 +2,10 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Owens' Handgun"
+	SWEP.Description = "A Tier 1 handgun that excels at close range by firing 2 deadly shots at once"
 	SWEP.Slot = 1
 	SWEP.SlotPos = 0
-	
+
 	SWEP.ViewModelFlip = false
 	SWEP.ViewModelFOV = 50
 
