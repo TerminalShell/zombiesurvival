@@ -128,7 +128,7 @@ GM:AddStartingItem("pshtr", "'Peashooter' Handgun", nil, ITEMCAT_GUNS, 40, "weap
 GM:AddStartingItem("btlax", "'Battleaxe' Handgun", nil, ITEMCAT_GUNS, 40, "weapon_zs_battleaxe")
 GM:AddStartingItem("owens", "'Owens' Handgun", nil, ITEMCAT_GUNS, 40, "weapon_zs_owens")
 GM:AddStartingItem("blstr", "'Blaster' Shotgun", nil, ITEMCAT_GUNS, 55, "weapon_zs_blaster")
-GM:AddStartingItem("tossr", "'Tosser' SMG", nil, ITEMCAT_GUNS, 50, "weapon_zs_tosser")
+GM:AddStartingItem("tossr", "'Tosser' SMG", nil, ITEMCAT_GUNS, 45, "weapon_zs_tosser")
 GM:AddStartingItem("stbbr", "'Stubber' Rifle", nil, ITEMCAT_GUNS, 55, "weapon_zs_stubber")
 GM:AddStartingItem("crklr", "'Crackler' Assault Rifle", nil, ITEMCAT_GUNS, 50, "weapon_zs_crackler")
 

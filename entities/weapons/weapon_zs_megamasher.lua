@@ -2,6 +2,7 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "Mega Masher"
+	SWEP.Description = "Insanely Powerful Melee Weapon That Uses It's Size To Crush Enemies"
 	SWEP.ViewModelFOV = 75
 
 	SWEP.VElements = {
