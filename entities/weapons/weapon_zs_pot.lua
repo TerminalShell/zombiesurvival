@@ -2,6 +2,7 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "Pot"
+	SWEP.Description = "Not that kind..."
 
 	SWEP.ViewModelFlip = false
 	SWEP.ViewModelFOV = 55

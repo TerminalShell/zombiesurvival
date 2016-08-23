@@ -2,6 +2,7 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "Plank"
+	SWEP.Description = "High speed, low drag"
 
 	SWEP.ViewModelFOV = 55
 	SWEP.ViewModelFlip = false
