@@ -1126,22 +1126,24 @@ end
 
 -- Custom random map loader, by Mwr247
 function GetNextMap()
-	//local maplist = string.Explode("\n",string.Replace(string.Trim(file.Read("cfg/mapcycle.txt","GAME"),"\n"),"\r",""))
+	--local maplist = string.Explode("\n",string.Replace(string.Trim(GetConVarString("mapcyclefile"),"\n"),"\r",""))
 	local tempmap=game.GetMapNext()
 	if evolve and evolve.mapcycle then
+    print("Evolve++ mapcycle found, searching for suitible map")
 		local min=math.Clamp(math.ceil(table.Count(player.GetAll())/16),1,3);
 		local max=math.Clamp(math.ceil((table.Count(player.GetAll())+8)/16),1,3);
 		local hits=-1
 		for k,v in pairs(evolve.mapcycle) do
-			if !file.Exists("maps/"..k..".bsp","GAME") then continue end
-			if (tonumber(v['min'])>=min and tonumber(v['min'])<=max) and ((tonumber(v['max'])>=min and tonumber(v['max'])<=max) or tonumber(v['max'])==0) then
-				if k!=game.GetMap() and (hits<0 or tonumber(v['hits'])<hits) then
-					hits=tonumber(v['hits'])
-					tempmap=k
+			if ( v[1] == game.GetMap() or tonumber(v[2]) == 0 or !file.Exists("maps/"..v[1]..".bsp","GAME") ) then continue end
+			if ( tonumber(v[3])>=min and tonumber(v[4])<=max) and ((tonumber(v[4])>=min and tonumber(v[4])<=max) or tonumber(v[4])==0) then
+				if (hits<0 or tonumber(v[5])<hits) then
+					hits=tonumber(v[5])
+					tempmap=v[1]
 				end
 			end
 		end
 	end
+  print("Evolve++ mapcycle map chosen: " .. tempmap)
 	return tempmap
 end
 
