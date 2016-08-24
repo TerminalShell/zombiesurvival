@@ -1,6 +1,6 @@
 local messages = {"ONE OF US!",
 "BUTT MANGLED!",
-"BUY STARBOUND",
+"DON'T BUY STARBOUND",
 "DO YOU EVEN LIFT?",
 "BULLIED",
 "DESTRUCTION 2.0",
@@ -10,15 +10,17 @@ local messages = {"ONE OF US!",
 "LEFT FOR DEAD",
 "SUCK BRICK KID!",
 "2 E Z",
-"HONK",
-"HONK HONK",
+"DICKS OUT 4 HARAMBE",
+"DO IT 4 HARAMBE",
 "RUN N GUN!1",
 "ADMEN 2 ME!",
 "Press 'R' to reload!",
 "GOTTA GO FAST!!",
-"wow kiddo",
-"Bind a key to suit zoom.",
-"ooga booga!!"
+"GOTTA HEAL UP!",
+"REAGAN SMASH!!!!!",
+"IS IT DONE YET?",
+"!VOTEMAP38",
+"KYS PLEASE"
 
 }
 
