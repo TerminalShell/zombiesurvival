@@ -8,60 +8,10 @@ GM.Crafts = {
 		Result = {"prop_physics", Model("models/props_junk/wood_crate002a.mdl")}
 	},
 	{
-		Name = "a bust-on-a-stick",
-		callback = function(enta, entb)
-			return enta:IsPhysicsModel("models/props_combine/breenbust.mdl") and entb:IsWeaponType("weapon_zs_plank")
-		end,
-		Result = {"prop_weapon"},
-		OnCrafted = function(pl, recipe, enta, entb, ent)
-			ent:SetWeaponType("weapon_zs_bust")
-		end
-	},
-	{
 		Name = "an oil-filled barrel",
 		a = {"*physics*", "models/props_junk/gascan001a.mdl"},
 		b = {"*physics*", "models/props_c17/oildrum001.mdl"},
 		Result = {"prop_physics", Model("models/props_c17/oildrum001_explosive.mdl")}
-	},
-	{
-		Name = "a sawhack",
-		callback = function(enta, entb)
-			return enta:IsPhysicsModel("models/props_junk/sawblade001a.mdl") and entb:IsWeaponType("weapon_zs_axe")
-		end,
-		Result = {"prop_weapon"},
-		OnCrafted = function(pl, recipe, enta, entb, ent)
-			ent:SetWeaponType("weapon_zs_sawhack")
-		end
-	},
-	{
-		Name = "a mega masher",
-		callback = function(enta, entb)
-			return enta:IsPhysicsModel("models/props_c17/oildrum001_explosive.mdl") and entb:IsWeaponType("weapon_zs_sledge")
-		end,
-		Result = {"prop_weapon"},
-		OnCrafted = function(pl, recipe, enta, entb, ent)
-			ent:SetWeaponType("weapon_zs_megamasher")
-		end
-	},
-	{
-		Name = "an electrohammer",
-		callback = function(enta, entb)
-			return enta:IsPhysicsModel("models/items/car_battery01.mdl") and entb:IsWeaponType("weapon_zs_hammer")
-		end,
-		Result = {"prop_weapon"},
-		OnCrafted = function(pl, recipe, enta, entb, ent)
-			ent:SetWeaponType("weapon_zs_electrohammer")
-		end
-	},
-	{
-		Name = "a razor blade",
-		callback = function(enta, entb)
-			return enta:IsPhysicsModel("models/props_junk/sawblade001a.mdl") and entb:IsWeaponType("weapon_zs_knife")
-		end,
-		Result = {"prop_weapon"},
-		OnCrafted = function(pl, recipe, enta, entb, ent)
-			ent:SetWeaponType("weapon_zs_razor")
-		end
 	}
 }
 
