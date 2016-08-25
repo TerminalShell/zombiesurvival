@@ -2,9 +2,10 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "Lamp"
+	SWEP.Description = "Brighten up someone's day"
 	SWEP.ViewModelFOV = 80
 	SWEP.ViewModelFlip = false
-		
+
 	SWEP.ShowViewModel = true
 	SWEP.ShowWorldModel = false
 	SWEP.ViewModelBoneMods = {

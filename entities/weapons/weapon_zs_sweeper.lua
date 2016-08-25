@@ -2,10 +2,11 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Sweeper' Shotgun"
+	SWEP.Description = "Powerful shotgun that is great for taking out large hoards of zombies"
 	SWEP.Slot = 3
 	SWEP.SlotPos = 0
 	SWEP.ViewModelFlip = false
-	
+
 	SWEP.HUD3DBone = "v_weapon.M3_PARENT"
 	SWEP.HUD3DPos = Vector(-1.1, -4.7, -5)
 	SWEP.HUD3DAng = Angle(0, 0, 0)

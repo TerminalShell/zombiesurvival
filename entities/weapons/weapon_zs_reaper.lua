@@ -2,10 +2,11 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Reaper' UMP"
+	SWEP.Description = "A powerful SMG that does a lot of damage but slows you down quite a bit"
 	SWEP.Slot = 2
 	SWEP.SlotPos = 0
 	SWEP.ViewModelFlip = false
-	
+
 	SWEP.HUD3DBone = "v_weapon.ump45_Release"
 	SWEP.HUD3DPos = Vector(-1.8, -4, 3.5)
 	SWEP.HUD3DAng = Angle(0, 0, 0)
