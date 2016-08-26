@@ -37,7 +37,7 @@ end
 function ENT:Explode(vHitPos, vHitNormal, eHitEntity)
 	if self.Exploded then return end
 	self.Exploded = true
-	self.DeathTime = 0
+	self.DeathTime = 1
 
 	local owner = self:GetOwner()
 	if not owner:IsValid() then owner = self end

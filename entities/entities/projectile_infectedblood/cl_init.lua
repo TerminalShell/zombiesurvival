@@ -5,25 +5,13 @@ ENT.NextEmit = 0
 function ENT:Initialize()
 	self:DrawShadow(false)
 
-	self.Emitter = ParticleEmitter(self:GetPos())
-	self.Emitter:SetNearClip(36, 44)
-
 	self.Size = math.Rand(10, 14)
-end
-
-function ENT:Think()
-	self.Emitter:SetPos(self:GetPos())
-end
-
-function ENT:OnRemove()
-	self.Emitter:Finish()
 end
 
 local colFlesh = Color(255, 255, 255, 255)
 local matFlesh = Material("decals/blood1")
 function ENT:Draw()
 	local size = self.Size
-
 	render.SetMaterial(matFlesh)
 	local pos = self:GetPos()
 	render.DrawSprite(pos, size, size, colFlesh)
@@ -31,7 +19,9 @@ function ENT:Draw()
 	if CurTime() < self.NextEmit then return end
 	self.NextEmit = CurTime() + 0.05
 
-	local particle = self.Emitter:Add("decals/blood"..math.random(6), pos + VectorRand():GetNormalized() * math.Rand(1, 4))
+	local emitter = ParticleEmitter(pos)
+	emitter:SetNearClip(36, 44)
+	local particle = emitter:Add("decals/blood"..math.random(6), pos + VectorRand():GetNormalized() * math.Rand(1, 4))
 	particle:SetVelocity(VectorRand():GetNormalized() * math.Rand(1, 4))
 	particle:SetDieTime(math.Rand(0.6, 0.9))
 	particle:SetStartAlpha(255)
@@ -41,4 +31,5 @@ function ENT:Draw()
 	particle:SetRoll(math.Rand(0, 360))
 	particle:SetRollDelta(math.Rand(-4, 4))
 	particle:SetLighting(true)
+	emitter:Finish()
 end

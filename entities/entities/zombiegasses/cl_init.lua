@@ -3,15 +3,6 @@ include("shared.lua")
 ENT.NextGas = 0
 ENT.NextSound = 0
 
-function ENT:Initialize()
-	self.Emitter = ParticleEmitter(self:GetPos())
-	self.Emitter:SetNearClip(48, 64)
-end
-
-function ENT:OnRemove()
-	self.Emitter:Finish()
-end
-
 function ENT:Think()
 	if self.NextSound <= CurTime() then
 		self.NextSound = CurTime() + math.Rand(4, 6)
@@ -32,7 +23,9 @@ function ENT:Draw()
 	if CurTime() < self.NextGas then return end
 	self.NextGas = CurTime() + math.Rand(0.1, 0.25)
 
-	local particle = self.Emitter:Add("particles/smokey", self:GetPos() + VectorRand():GetNormalized() * math.Rand(8, radius + 32))
+	local emitter = ParticleEmitter(self:GetPos())
+	emitter:SetNearClip(48, 64)
+	local particle = emitter:Add("particles/smokey", self:GetPos() + VectorRand():GetNormalized() * math.Rand(8, radius + 32))
 	particle:SetVelocity(VectorRand():GetNormalized() * math.Rand(8, 32))
 	particle:SetDieTime(math.Rand(1.2, 2.5))
 	particle:SetStartAlpha(math.Rand(115, 145))
@@ -44,4 +37,5 @@ function ENT:Draw()
 	particle:SetCollide(true)
 	particle:SetBounce(0.25)
 	particle:SetColor(10, math.Rand(120, 180), 10)
+	emitter:Finish()
 end

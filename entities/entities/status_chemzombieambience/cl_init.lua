@@ -8,20 +8,15 @@ function ENT:Initialize()
 	self:DrawShadow(false)
 	self:SetRenderBounds(Vector(-40, -40, -18), Vector(40, 40, 90))
 
-	self.Emitter = ParticleEmitter(self:GetPos())
-	self.Emitter:SetNearClip(32, 48)
-
 	self.AmbientSound = CreateSound(self, "npc/zombie_poison/pz_breathe_loop1.wav")
 	self.AmbientSound:PlayEx(0.67, 100)
 end
 
 function ENT:OnRemove()
-	self.Emitter:Finish()
 	self.AmbientSound:Stop()
 end
 
 function ENT:Think()
-	self.Emitter:SetPos(self:GetPos())
 	self.AmbientSound:PlayEx(0.67, 100 + math.sin(RealTime()))
 end
 
@@ -37,7 +32,9 @@ function ENT:DrawTranslucent()
 		if self.NextEmit <= CurTime() then
 			self.NextEmit = CurTime() + 0.15
 
-			local particle = self.Emitter:Add("particle/smokestack", pos)
+			local emitter = ParticleEmitter(self:GetPos())
+			emitter:SetNearClip(32, 48)
+			local particle = emitter:Add("particle/smokestack", pos)
 			particle:SetVelocity(owner:GetVelocity() * 0.8)
 			particle:SetDieTime(math.Rand(1, 1.35))
 			particle:SetStartAlpha(220)
@@ -51,6 +48,7 @@ function ENT:DrawTranslucent()
 			particle:SetBounce(0.45)
 			particle:SetAirResistance(12)
 			particle:SetColor(0, 200, 0)
+			emitter:Finish()
 		end
 	end
 end
