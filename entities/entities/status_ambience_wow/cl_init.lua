@@ -7,13 +7,6 @@ ENT.GlowSize = 32
 
 function ENT:Initialize()
 	self:DrawShadow(false)
-
-	self.Emitter = ParticleEmitter(self:GetPos())
-	self.Emitter:SetNearClip(16, 24)
-end
-
-function ENT:OnRemove()
-	self.Emitter:Finish()
 end
 
 local matGlow = Material("sprites/glow04_noz")
@@ -44,7 +37,9 @@ function ENT:DrawTranslucent()
 	if time >= self.NextEmit then
 		self.NextEmit = time + math.Rand(0.05, 0.25)
 
-		local particle = self.Emitter:Add("sprites/glow04_noz", pos)
+		local emitter = ParticleEmitter(self:GetPos())
+		emitter:SetNearClip(16, 24)
+		local particle = emitter:Add("sprites/glow04_noz", pos)
 		particle:SetVelocity(VectorRand():GetNormalized() * math.Rand(-64, 64))
 		particle:SetDieTime(math.Rand(2, 4))
 		particle:SetStartSize(1)
@@ -57,6 +52,7 @@ function ENT:DrawTranslucent()
 		particle:SetAirResistance(32)
 		particle:SetCollide(true)
 		particle:SetBounce(0.75)
+		emitter:Finish()
 	end
 
 	local dlight = DynamicLight(self:EntIndex())

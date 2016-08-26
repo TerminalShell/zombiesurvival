@@ -10,9 +10,6 @@ function ENT:Initialize()
 	local nsize = -size
 	self:SetRenderBounds(Vector(nsize, nsize, nsize * 0.25), Vector(size, size, size * 0.25))
 
-	self.Emitter = ParticleEmitter(self:GetPos())
-	self.Emitter:SetNearClip(24, 32)
-
 	self.NextEmit = 0
 end
 
@@ -28,15 +25,11 @@ function ENT:Think()
 		self.ScanningSound:Stop()
 		self.ShootingSound:Stop()
 	end
-
-	self.Emitter:SetPos(self:GetPos())
 end
 
 function ENT:OnRemove()
 	self.ScanningSound:Stop()
 	self.ShootingSound:Stop()
-
-	self.Emitter:Finish()
 end
 
 function ENT:SetTurretHealth(health)
@@ -58,7 +51,9 @@ function ENT:Draw()
 	if healthpercent <= 0.5 and CurTime() >= self.NextEmit then
 		self.NextEmit = CurTime() + 0.05
 
-		local particle = self.Emitter:Add("particles/smokey", self:DefaultPos())
+		local emitter = ParticleEmitter(self:GetPos())
+		emitter:SetNearClip(24, 32)
+		local particle = emitter:Add("particles/smokey", self:DefaultPos())
 		particle:SetStartAlpha(180)
 		particle:SetEndAlpha(0)
 		particle:SetStartSize(0)
@@ -73,6 +68,7 @@ function ENT:Draw()
 		particle:SetRollDelta(math.Rand(-4, 4))
 		particle:SetCollide(true)
 		particle:SetBounce(0.2)
+		emitter:Finish()
 	end
 
 	local owner = self:GetObjectOwner()
@@ -102,7 +98,7 @@ function ENT:Draw()
 		if flash and self:GetManualControl() then
 			draw.SimpleText("[MANUAL CONTROL]", "DefaultFont", wid * 0.5, hei * 0.325, COLOR_YELLOW, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 		end
-		
+
 		if ammo > 0 then
 			draw.SimpleText("["..ammo.." / "..self.MaxAmmo.."]", "DefaultFontBold", wid * 0.5, hei - 10, COLOR_WHITE, TEXT_ALIGN_CENTER, TEXT_ALIGN_TOP)
 		elseif flash then

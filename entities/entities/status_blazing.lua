@@ -11,20 +11,15 @@ if CLIENT then
 		self.AmbientSound:PlayEx(0.55, 130)
 
 		self:SetRenderBounds(Vector(-40, -40, -18), Vector(40, 40, 90))
-
-		self.Emitter = ParticleEmitter(self:GetPos())
-		self.Emitter:SetNearClip(40, 50)
 	end
-	
+
 	ENT.NextEmit = 0
 
 	function ENT:OnRemove()
 		self.AmbientSound:Stop()
-		self.Emitter:Finish()
 	end
 
 	function ENT:Think()
-		self.Emitter:SetPos(self:GetPos())
 		local dlight = DynamicLight( self:EntIndex() )
 		if ( dlight ) then
 			local c = Color(230, 200, 120, 255)
@@ -46,6 +41,9 @@ if CLIENT then
 		local speed = owner:GetVelocity()
 
 		if owner:IsValid() then
+			local emitter = ParticleEmitter(self:GetPos())
+			emitter:SetNearClip(40, 50)
+
 			-- Head
 			local attach = owner:GetAttachment(owner:LookupAttachment("eyes"))
 			if not attach then attach = owner:GetAttachment(owner:LookupAttachment("head")) end
@@ -53,7 +51,7 @@ if CLIENT then
 				self:SetAngles(attach.Ang)
 				local pos = attach.Pos
 				self:SetPos(pos)
-				local particle = self.Emitter:Add("effects/fire_cloud1", pos + owner:GetAimVector() * -2)
+				local particle = emitter:Add("effects/fire_cloud1", pos + owner:GetAimVector() * -2)
 				self:Flame(particle,math.Rand(6, 14),speed)
 			end
 			-- Body
@@ -62,7 +60,7 @@ if CLIENT then
 				self:SetAngles(attach.Ang)
 				local pos = attach.Pos - Vector(0, 0, 10)
 				self:SetPos(pos)
-				local particle = self.Emitter:Add("effects/fire_cloud1", pos)
+				local particle = emitter:Add("effects/fire_cloud1", pos)
 				self:Flame(particle,math.Rand(14, 26),speed)
 			end
 			-- Left Hand
@@ -71,7 +69,7 @@ if CLIENT then
 				self:SetAngles(attach.Ang)
 				local pos = attach.Pos
 				self:SetPos(pos)
-				local particle = self.Emitter:Add("effects/fire_cloud1", pos)
+				local particle = emitter:Add("effects/fire_cloud1", pos)
 				self:Flame(particle,math.Rand(4, 12),speed)
 			end
 			-- Right Hand
@@ -80,18 +78,19 @@ if CLIENT then
 				self:SetAngles(attach.Ang)
 				local pos = attach.Pos
 				self:SetPos(pos)
-				local particle = self.Emitter:Add("effects/fire_cloud1", pos)
+				local particle = emitter:Add("effects/fire_cloud1", pos)
 				self:Flame(particle,math.Rand(4, 12),speed)
 			end
 			-- Feet
 			local pos = owner:GetPos() + Vector(0, 0, 15)
 			self:SetPos(pos)
-			local particle = self.Emitter:Add("effects/fire_cloud1", pos)
+			local particle = emitter:Add("effects/fire_cloud1", pos)
 			self:Flame(particle,math.Rand(14, 26),speed)
+			emitter:Finish()
 		end
 		return
 	end
-	
+
 	function ENT:Flame(particle, size, speed)
 		particle:SetVelocity(speed)
 		particle:SetDieTime(math.Rand(0.4, 0.6))
@@ -104,9 +103,5 @@ if CLIENT then
 		particle:SetGravity(Vector(0,0,125))
 		particle:SetCollide(true)
 		particle:SetAirResistance(12)
-	end
-else
-	function ENT:Initialize()
-		if self:GetOwner() or self:GetOwner():IsValid() or self:GetOwner():Alive() then self:Remove() end
 	end
 end
