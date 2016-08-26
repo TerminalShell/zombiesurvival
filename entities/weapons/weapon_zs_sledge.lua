@@ -2,6 +2,7 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "Sledgehammer"
+	SWEP.Description = "When you really have to hit the nail on the head"
 	SWEP.ViewModelFOV = 75
 end
 

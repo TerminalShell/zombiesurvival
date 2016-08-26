@@ -2,6 +2,7 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Battleaxe' Handgun"
+	SWEP.Description = "A Tier 1 handgun that focuses on stopping power and damage"
 	SWEP.Slot = 1
 	SWEP.SlotPos = 0
 

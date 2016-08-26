@@ -2,6 +2,7 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "Knife"
+	SWEP.Description = "Factory New Vanilla Knife"
 end
 
 SWEP.Base = "weapon_zs_basemelee"

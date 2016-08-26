@@ -2,7 +2,8 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "Sawhack"
-	
+	SWEP.Description = "The combination of an axe and a sawblade makes for deadly encounters"
+
 	SWEP.ViewModelFOV = 55
 	SWEP.ViewModelFlip = false
 
