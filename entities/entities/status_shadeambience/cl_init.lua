@@ -8,20 +8,14 @@ function ENT:Initialize()
 	self.AmbientSound = CreateSound(self, "npc/antlion_guard/growl_idle.wav")
 	self.AmbientSound:PlayEx(0.55, 130)
 
-	self.Emitter = ParticleEmitter(self:GetPos())
-	self.Emitter:SetNearClip(24, 32)
-
 	self:GetOwner().status_shadeambience = self
 end
 
 function ENT:OnRemove()
 	self.AmbientSound:Stop()
-	self.Emitter:Finish()
 end
 
 function ENT:Think()
-	self.Emitter:SetPos(self:GetPos())
-
 	owner = self:GetOwner()
 	if owner:IsValid() then
 		self.AmbientSound:PlayEx(0.55, 130 + math.sin(RealTime()))
@@ -40,7 +34,9 @@ function ENT:Draw()
 		if owner:IsValid() then
 			local radius = owner:BoundingRadius() / 2
 
-			local particle = self.Emitter:Add("sprites/glow04_noz", owner:LocalToWorld(owner:OBBCenter()) + VectorRand():GetNormalized() * math.Rand(-radius, radius))
+			local emitter = ParticleEmitter(self:GetPos())
+			emitter:SetNearClip(24, 32)
+			local particle = emitter:Add("sprites/glow04_noz", owner:LocalToWorld(owner:OBBCenter()) + VectorRand():GetNormalized() * math.Rand(-radius, radius))
 			particle:SetDieTime(math.Rand(0.2, 0.4))
 			particle:SetStartSize(1)
 			particle:SetEndSize(power * 16)
@@ -49,6 +45,7 @@ function ENT:Draw()
 			particle:SetRoll(math.Rand(0, 360))
 			particle:SetRollDelta(math.Rand(-5, 5))
 			particle:SetColor(255, 255, 190)
+			emitter:Finish()
 		end
 	end
 end

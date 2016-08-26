@@ -5,33 +5,11 @@ ENT.LastTickSound = 0
 ENT.NextEmit = 0
 
 function ENT:Initialize()
-	self.Emitter = ParticleEmitter(self:GetPos())
-	self.Emitter:SetNearClip(48, 64)
-
 	self.DieTime = CurTime() + self.LifeTime
 end
 
 function ENT:Think()
-	local emitter = self.Emitter
-	local pos = self:GetPos() + self:GetUp() * 8
-	emitter:SetPos(pos)
-
 	local curtime = CurTime()
-
-	if curtime >= self.NextEmit then
-		self.NextEmit = curtime + 0.05
-
-		local particle = emitter:Add("particles/smokey", pos)
-		particle:SetVelocity(VectorRand():GetNormalized() * math.Rand(2, 14))
-		particle:SetDieTime(math.Rand(0.6, 0.74))
-		particle:SetStartAlpha(math.Rand(200, 220))
-		particle:SetEndAlpha(0)
-		particle:SetStartSize(1)
-		particle:SetEndSize(math.Rand(8, 10))
-		particle:SetRoll(math.Rand(-0.2, 0.2))
-		particle:SetColor(50, 50, 50)
-	end
-
 	if curtime >= self.NextTickSound then
 		local delta = self.DieTime - curtime
 
@@ -41,13 +19,28 @@ function ENT:Think()
 	end
 end
 
-function ENT:OnRemove()
-	self.Emitter:Finish()
-end
-
 local matGlow = Material("sprites/glow04_noz")
 function ENT:Draw()
 	self:DrawModel()
+
+	local pos = self:GetPos() + self:GetUp() * 8
+	local curtime = CurTime()
+	if curtime >= self.NextEmit then
+		self.NextEmit = curtime + 0.05
+
+		local emitter = ParticleEmitter(pos)
+		emitter:SetNearClip(48, 64)
+		local particle = emitter:Add("particles/smokey", pos)
+		particle:SetVelocity(VectorRand():GetNormalized() * math.Rand(2, 14))
+		particle:SetDieTime(math.Rand(0.6, 0.74))
+		particle:SetStartAlpha(math.Rand(200, 220))
+		particle:SetEndAlpha(0)
+		particle:SetStartSize(1)
+		particle:SetEndSize(math.Rand(8, 10))
+		particle:SetRoll(math.Rand(-0.2, 0.2))
+		particle:SetColor(50, 50, 50)
+		emitter:Finish()
+	end
 
 	if math.abs(self.LastTickSound - CurTime()) < 0.1 then
 		local pos = self:GetPos() + self:GetUp() * 8

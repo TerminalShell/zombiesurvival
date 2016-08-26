@@ -5,13 +5,9 @@ ENT.NextEmit = 0
 function ENT:Initialize()
 	self.AmbientSound = CreateSound(self, "ambient/fire/fire_small_loop1.wav")
 	self.AmbientSound:PlayEx(0.75, 100)
-		
-	self.Emitter = ParticleEmitter(self:GetPos())
-	self.Emitter:SetNearClip(24, 32)
 end
 
 function ENT:Think()
-	self.Emitter:SetPos(self:GetPos())
 	local dlight = DynamicLight( self:EntIndex() )
 	if ( dlight ) then
 		local c = Color(230, 200, 120, 255)
@@ -28,7 +24,6 @@ end
 
 function ENT:OnRemove()
 	self.AmbientSound:Stop()
-	self.Emitter:Finish()
 end
 
 function ENT:Draw()
@@ -36,8 +31,9 @@ function ENT:Draw()
 	self.NextEmit = CurTime() + 0.01
 
 	local pos = self:GetPos()
-	local particle = self.Emitter:Add("effects/fire_cloud1", pos)
-	
+	local emitter = ParticleEmitter(pos)
+	emitter:SetNearClip(24, 32)
+	local particle = emitter:Add("effects/fire_cloud1", pos)
 	particle:SetVelocity((self:GetVelocity():GetNormalized() * -1 + VectorRand():GetNormalized()):GetNormalized() * math.Rand(16, 48))
 	particle:SetDieTime(math.Rand(0.4, 0.6))
 	particle:SetColor(255,255,255)
@@ -49,4 +45,5 @@ function ENT:Draw()
 	particle:SetGravity(Vector(0,0,125))
 	particle:SetCollide(true)
 	particle:SetAirResistance(12)
+	emitter:Finish()
 end
