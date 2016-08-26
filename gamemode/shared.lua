@@ -7,8 +7,8 @@ GM.Website	=	"http://mwr247.com/"
 GM.Credits = {
 	{"William \"JetBoom\" Moodhe", "williammoodhe@gmail.com (www.noxiousnet.com)", "Creating Zombie Survival"},
 	{"Mwr247", "mwr247@gmail.com", "Modifying Zombie Survival"},
-  {"Etrius", "tmr1228@gmail.com", "Modifying Zombie Survival"},
-  {"CremeOfCrispy", "kriscambridge13@gmail.com", "Modifying Zombie Survival"},
+  	{"Etrius", "tmr1228@gmail.com", "Modifying Zombie Survival"},
+  	{"CremeOfKrispy", "kriscambridge13@gmail.com", "Modifying Zombie Survival"},
 	{"Bandit Kitteh", "bandit.kitteh@hotmail.com", "Modifying Zombie Survival"},
 	{"Kalafina", "http://www.sonymusic.co.jp/Music/Info/kalafina/", "Last Human music"},
 	{"comeonandslam", "http://www.youtube.com/user/comeonandslam", "Wave 10 music"},
