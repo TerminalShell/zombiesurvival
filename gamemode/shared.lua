@@ -7,8 +7,8 @@ GM.Website	=	"http://mwr247.com/"
 GM.Credits = {
 	{"William \"JetBoom\" Moodhe", "williammoodhe@gmail.com (www.noxiousnet.com)", "Creating Zombie Survival"},
 	{"Mwr247", "mwr247@gmail.com", "Modifying Zombie Survival"},
-  	{"Etrius", "tmr1228@gmail.com", "Modifying Zombie Survival"},
-  	{"CremeOfKrispy", "kriscambridge13@gmail.com", "Modifying Zombie Survival"},
+  {"Etrius", "tmr1228@gmail.com", "Modifying Zombie Survival"},
+  {"CremeOfKrispy", "kriscambridge13@gmail.com", "Modifying Zombie Survival"},
 	{"Bandit Kitteh", "bandit.kitteh@hotmail.com", "Modifying Zombie Survival"},
 	{"Kalafina", "http://www.sonymusic.co.jp/Music/Info/kalafina/", "Last Human music"},
 	{"comeonandslam", "http://www.youtube.com/user/comeonandslam", "Wave 10 music"},
@@ -36,6 +36,15 @@ include("obj_player_extend.lua")
 include("obj_weapon_extend.lua")
 
 GM.EndRound = false
+
+GM.InitialZombie = {}
+if SERVER then
+	util.AddNetworkString( "InitialZombie" )
+else
+	net.Receive( "InitialZombie", function( len, ply )
+	 	GAMEMODE.InitialZombie = net.ReadTable()
+	end )
+end
 
 team.SetUp(TEAM_ZOMBIE, "The Undead", Color(0, 255, 0, 255))
 team.SetUp(TEAM_SURVIVORS, "Survivors", Color(0, 160, 255, 255))
@@ -92,8 +101,8 @@ function GM:SortZombieSpawnDistances(allplayers)
 					closest = dist
 				end
 			end
-			if ( evolve and evolve.donors and evolve:IsDonor( pl ) ) then
-				closest = closest * 2
+			if ( self.InitialZombie and self.InitialZombie[pl:UniqueID()] ) then
+				closest = closest + self.InitialZombie[pl:UniqueID()] * 1000
 			end
 			pl._ZombieSpawnDistance = closest
 		end
