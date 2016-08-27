@@ -30,7 +30,7 @@ GM.PowerupUnlock[3] = {"health","regen"}
 GM.PowerupUnlock[4] = {"health","regen"}
 GM.PowerupUnlock[5] = {"health","regen"}
 GM.PowerupUnlock[6] = {"health","regen"}
-	
+
 ITEMCAT_GUNS = 1
 ITEMCAT_AMMO = 2
 ITEMCAT_MELEE = 3

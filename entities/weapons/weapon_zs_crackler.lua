@@ -2,6 +2,7 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Crackler' Assault Rifle"
+	SWEP.Description = "Higher accuracy assult rifle that deals a moderate amount of damage"
 	SWEP.Slot = 2
 	SWEP.SlotPos = 0
 	SWEP.ViewModelFlip = false

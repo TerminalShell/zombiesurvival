@@ -2,9 +2,10 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Akbar' Assault Rifle"
+	SWEP.Description = "Fully Automatic Assault Rifle with moderate damage and high fire rate"
 	SWEP.Slot = 2
 	SWEP.SlotPos = 0
-	
+
 	SWEP.ViewModelFlip = false
 	SWEP.ViewModelFOV = 40
 

@@ -2,14 +2,15 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "Bust-on-a-stick"
+	SWEP.Description = "Bust-on-a-stick"
 	SWEP.ViewModelFOV = 70
 	SWEP.ViewModelFlip = false
 
 	SWEP.UseHands = true
-	
+
 	SWEP.ShowViewModel = true
 	SWEP.ShowWorldModel = false
-	
+
 	SWEP.VElements = {
 		["base"] = { type = "Model", model = "models/props_combine/breenbust.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(6, -2, -17), angle = Angle(180, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 		["stick"] = { type = "Model", model = "models/props_docks/dock01_pole01a_128.mdl", bone = "ValveBiped.Bip01", rel = "base", pos = Vector(3.25, 3.194, -20.932), angle = Angle(5, 0, 0), size = Vector(0.15, 0.15, 0.15), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }

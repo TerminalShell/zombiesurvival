@@ -2,11 +2,12 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Sprayer' Mac 10"
+	SWEP.Description = "An SMG that sacrifices accuracy for a large clip. Great for close quarters"
 	SWEP.Slot = 2
 	SWEP.SlotPos = 0
 	SWEP.ViewModelFlip = false
 	SWEP.ViewModelFOV = 40
-	
+
 	SWEP.HUD3DBone = "v_weapon.mac10_bolt"
 	SWEP.HUD3DPos = Vector(-1.3, -0.1, 1.5)
 	SWEP.HUD3DAng = Angle(0, 0, 0)

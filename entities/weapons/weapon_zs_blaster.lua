@@ -2,9 +2,10 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Blaster' Shotgun"
+	SWEP.Description = "Slow firing shotgun that proves deadly at close range"
 	SWEP.Slot = 3
 	SWEP.SlotPos = 0
-	
+
 	SWEP.ViewModelFlip = false
 
 	SWEP.HUD3DPos = Vector(10, -3.5, -1.8)

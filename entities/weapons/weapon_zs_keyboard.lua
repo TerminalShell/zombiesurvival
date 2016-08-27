@@ -2,6 +2,7 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "Keyboard"
+	SWEP.Description = "For the Keyboard warriors"
 
 	SWEP.ViewModelFOV = 55
 	SWEP.ViewModelFlip = false

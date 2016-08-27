@@ -2,10 +2,11 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Inferno' AUG"
+	SWEP.Description = "Fully Automatic Assault Rifle with a high rate of fire and high accuracy"
 	SWEP.Slot = 2
 	SWEP.SlotPos = 0
 	SWEP.ViewModelFlip = false
-	
+
 	SWEP.HUD3DBone = "v_weapon.aug_Parent"
 	SWEP.HUD3DPos = Vector(-0.8, -4.2, 1)
 	SWEP.HUD3DAng = Angle(0, 0, 0)

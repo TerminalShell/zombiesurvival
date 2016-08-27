@@ -2,10 +2,11 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Stubber' Rifle"
+	SWEP.Description = "Accurate sniper rifle that does a moderate amount of damage"
 	SWEP.Slot = 3
 	SWEP.SlotPos = 0
 	SWEP.ViewModelFlip = false
-	
+
 	SWEP.HUD3DBone = "v_weapon.scout_Parent"
 	SWEP.HUD3DPos = Vector(-1, -3, -6)
 	SWEP.HUD3DAng = Angle(0, 0, 0)

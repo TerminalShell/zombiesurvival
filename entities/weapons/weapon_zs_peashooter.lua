@@ -2,13 +2,14 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Peashooter' Handgun"
+	SWEP.Description = "A Tier 1 handgun that focuses on range and accuracy over damage and stopping power"
 	SWEP.Slot = 1
 	SWEP.SlotPos = 0
 
 	SWEP.ViewModelFOV = 60
 
 	SWEP.ViewModelFlip = false
-	
+
 	SWEP.HUD3DBone = "v_weapon.p228_Slide"
 	SWEP.HUD3DPos = Vector(-0.65, -0.25, 1)
 	SWEP.HUD3DAng = Angle(0, 0, 0)

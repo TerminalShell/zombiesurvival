@@ -2,6 +2,7 @@ AddCSLuaFile()
 
 if CLIENT then
 	SWEP.PrintName = "'Tosser' SMG"
+	SWEP.Description = "Medium range SMG that sacrifices accuracy for damage"
 	SWEP.Slot = 2
 	SWEP.SlotPos = 0
 
@@ -24,7 +25,7 @@ SWEP.WorldModel = "models/weapons/w_smg1.mdl"
 
 SWEP.ReloadSound = Sound("Weapon_SMG1.Reload")
 SWEP.Primary.Sound = Sound("Weapon_AR2.NPC_Single")
-SWEP.Primary.Damage = 15
+SWEP.Primary.Damage = 20
 SWEP.Primary.NumShots = 1
 SWEP.Primary.Delay = 0.15
 
