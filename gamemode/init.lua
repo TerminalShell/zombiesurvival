@@ -1232,6 +1232,10 @@ function GM:RestartLua()
 	self.PreviouslyDied = {}
 	self.StoredUndeadFrags = {}
 
+	net.Start( "InitialZombie" )
+	net.WriteTable( self.InitialZombie )
+	net.Broadcast()
+
 	ROUNDWINNER = nil
 	LAST_BITE = nil
 	LASTHUMAN = nil
@@ -1394,8 +1398,8 @@ function GM:PlayerReady(pl)
 		-- This is just so they get updated on what class they are and have their hulls set up right.
 		pl:DoHulls(classid, TEAM_UNDEAD)
 	elseif self:GetWave() <= 0 and pl.StartingWorth > 0 and not self.StartingLoadout then
-		-- Donor worth adder
-		if evolve and evolve.donors and evolve:IsDonor( pl ) then
+		-- Starting zombie worth adder
+		if evolve.donors and evolve:IsDonor( pl ) then
 			pl.StartingWorth = self.StartingWorth + 10
 			pl:SendLua("GAMEMODE.StartingWorth="..tostring(pl.StartingWorth))
 		end
@@ -2392,7 +2396,9 @@ function GM:SetClosestsToZombie()
 		end
 		pl:SetFrags(0)
 		pl:SetDeaths(0)
-		self.StartingZombie[pl:UniqueID()] = true
+		self.StartingZombie[pl:UniqueID()] = 1
+		self.InitialZombie[pl:UniqueID()] = 1 + (self.InitialZombie[pl:UniqueID()] or 0)
+
 		pl:UnSpectateAndSpawn()
 	end
 
