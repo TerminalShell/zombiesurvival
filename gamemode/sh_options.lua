@@ -231,6 +231,11 @@ GM:AddPointShopItem("medkit", "Medical Kit", nil, ITEMCAT_TOOLS, 100, "weapon_zs
 
 GM:AddPointShopItem("grenade", "Grenade", nil, ITEMCAT_OTHER, 60, "weapon_zs_grenade")
 GM:AddPointShopItem("detpck", "Detonation Pack", nil, ITEMCAT_OTHER, 70, "weapon_zs_detpack")
+GM:AddPointShopItem("a bust-on-a-stick", "A Bust-On-A-Stick", nil, ITEMCAT_OTHER, 50, "weapon_zs_bust")
+GM:AddPointShopItem("a sawhack", "A Sawhack", nil, ITEMCAT_OTHER, 60, "weapon_zs_sawhack")
+GM:AddPointShopItem("a mega masher", "A Mega Masher", nil, ITEMCAT_OTHER, 80, "weapon_zs_megamasher")
+GM:AddPointShopItem("an electrohammer", "An Electrohammer", nil, ITEMCAT_OTHER, 80, "weapon_zs_electrohammer")
+GM:AddPointShopItem("a razor blade", "A Razor Blade", nil, ITEMCAT_OTHER, 30, "weapon_zs_razor")
 
 local function genericcallback(pl, magnitude) return pl:Name(), magnitude end
 GM.HonorableMentions = {}
