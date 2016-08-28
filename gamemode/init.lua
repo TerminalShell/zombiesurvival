@@ -1141,7 +1141,8 @@ function GetNextMap()
     end
 		for k,v in pairs(mapcycle) do
 			if ( v[1] == game.GetMap() or tonumber(v[2]) == 0 or !file.Exists("maps/"..v[1]..".bsp","GAME") ) then continue end
-			if ( tonumber(v[3])>=min and tonumber(v[4])<=max) and ((tonumber(v[4])>=min and tonumber(v[4])<=max) or tonumber(v[4])==0) then
+			local realmax=math.Clamp(math.max(tonumber(v[3]),tonumber(v[4])),1,3)
+			if ( tonumber(v[3])>=min and realmax<=max ) then
 				if (tonumber(v[7])<cutoff) then
 					table.insert(maplist, v[1])
 				end
