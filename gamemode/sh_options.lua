@@ -128,7 +128,7 @@ GM:AddStartingItem("pshtr", "'Peashooter' Handgun", nil, ITEMCAT_GUNS, 40, "weap
 GM:AddStartingItem("btlax", "'Battleaxe' Handgun", nil, ITEMCAT_GUNS, 40, "weapon_zs_battleaxe")
 GM:AddStartingItem("owens", "'Owens' Handgun", nil, ITEMCAT_GUNS, 40, "weapon_zs_owens")
 GM:AddStartingItem("blstr", "'Blaster' Shotgun", nil, ITEMCAT_GUNS, 55, "weapon_zs_blaster")
-GM:AddStartingItem("tossr", "'Tosser' SMG", nil, ITEMCAT_GUNS, 50, "weapon_zs_tosser")
+GM:AddStartingItem("tossr", "'Tosser' SMG", nil, ITEMCAT_GUNS, 45, "weapon_zs_tosser")
 GM:AddStartingItem("stbbr", "'Stubber' Rifle", nil, ITEMCAT_GUNS, 55, "weapon_zs_stubber")
 GM:AddStartingItem("crklr", "'Crackler' Assault Rifle", nil, ITEMCAT_GUNS, 50, "weapon_zs_crackler")
 
@@ -231,6 +231,11 @@ GM:AddPointShopItem("medkit", "Medical Kit", nil, ITEMCAT_TOOLS, 100, "weapon_zs
 
 GM:AddPointShopItem("grenade", "Grenade", nil, ITEMCAT_OTHER, 60, "weapon_zs_grenade")
 GM:AddPointShopItem("detpck", "Detonation Pack", nil, ITEMCAT_OTHER, 70, "weapon_zs_detpack")
+GM:AddPointShopItem("a bust-on-a-stick", "A Bust-On-A-Stick", nil, ITEMCAT_OTHER, 50, "weapon_zs_bust")
+GM:AddPointShopItem("a sawhack", "A Sawhack", nil, ITEMCAT_OTHER, 60, "weapon_zs_sawhack")
+GM:AddPointShopItem("a mega masher", "A Mega Masher", nil, ITEMCAT_OTHER, 80, "weapon_zs_megamasher")
+GM:AddPointShopItem("an electrohammer", "An Electrohammer", nil, ITEMCAT_OTHER, 80, "weapon_zs_electrohammer")
+GM:AddPointShopItem("a razor blade", "A Razor Blade", nil, ITEMCAT_OTHER, 30, "weapon_zs_razor")
 
 local function genericcallback(pl, magnitude) return pl:Name(), magnitude end
 GM.HonorableMentions = {}
