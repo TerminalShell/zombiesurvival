@@ -7,8 +7,8 @@ CLASS.Help = "controls_blaze_cadaver"
 CLASS.Wave = 0
 CLASS.Threshold = 0
 CLASS.Unlocked = true
-CLASS.Hidden = true
-CLASS.Boss = true
+CLASS.Hidden = false
+CLASS.Boss = false
 
 CLASS.Health = 1500
 CLASS.Speed = 170
