@@ -11,10 +11,10 @@ Terminal Shell was founded back in Garry's Mod 10 as a Zombie Survival server, r
 ## Credits
 * **JetBoom** - Original creator of Zombie Survival in Garry's Mod, who without, none of this would be possible.
 * **Mr. Wolf** - Father of Terminal Shell, the modified gamemode, and the reason we are here all these years later.
-* **Mwr247 (Prismic)** - Primary developer and past/present owner of Terminal Shell, who kept the dream and the community going.
-* **Bandit Kitteh** - Owner of Funquisition Daily, the successor to Terminal Shell, who's leadership, development, and vision kept us together.
+* **Mwr247 (Prismic)** - Owner of Terminal Shell, who kept the community going. Present lead developer.
+* **Etrius**/**CremeOfCrispy** - Present developers and long time players, who's ideas and hard work help merge our past with the future.
 * **Nickzip** - Long time player and admin. Ever loyal, ever faithful, before us and beyond us.
-* **Etrius**/**CremeOfCrispy**/**Chrono** - Long time players and/or present developers, who's ideas help merge our past with the future.
+* **Bandit Kitteh** - Owner of Funquisition Daily, the successor to Terminal Shell, who's leadership, development, and vision kept us together.
 * **Rot** - Amazingly skilled player and Terminal Shell's original benefactor, who gave generously to the game and community he loved.
 
 And to all our players, members, developers, and investors past and present, who without we would be nothing.
